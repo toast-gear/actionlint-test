@@ -8,9 +8,6 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    container: 
-      image: rhysd/actionlint:latest
-      args: --entrypoint sh
     steps:
       - uses: actions/checkout@v2
       - name: Run lint
