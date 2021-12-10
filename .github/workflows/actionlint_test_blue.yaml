@@ -10,6 +10,7 @@ jobs:
   pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Runner Version
+      - name: echo
         run: |
           echo $FOO
+          ech o asd
