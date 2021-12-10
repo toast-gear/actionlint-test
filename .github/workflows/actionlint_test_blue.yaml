@@ -13,3 +13,4 @@ jobs:
       - name: Print Runner Version
         run: |
           echo $FOO
+          ech o asd
