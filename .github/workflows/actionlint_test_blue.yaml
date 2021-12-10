@@ -1,0 +1,15 @@
+name: Blue
+
+on:
+  workflow_dispatch:
+
+env:
+  FOO: 1.1.1
+  
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Runner Version
+        run: |
+          echo $FOO
