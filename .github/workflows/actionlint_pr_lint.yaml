@@ -1,0 +1,23 @@
+name: Lint Actions workflows
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/*.yaml
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container: 
+      image: rhysd/actionlint:latest
+      args: --entrypoint sh
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run lint
+        run: |
+          echo "::add-matcher::.github/actionlint-matcher.json"
+          for file in .github/workflows/*.yaml; do 
+              if [ -f "$file" ]; then
+                actionlint -color $file
+              fi 
+          done
